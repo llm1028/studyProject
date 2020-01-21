@@ -11,9 +11,9 @@ import com.fiuty.domain.StockFinanceProduct;
  *
  * @author 郑达悦
  */
-public class SimpleFactory {
+class SimpleFactory {
 
-    public static AbstractFinanceProduct creatProduct(ProductEnum productEnum) {
+    static AbstractFinanceProduct creatProduct(ProductEnum productEnum) {
         switch (productEnum) {
             case Bond :
                 return new BondFinanceProduct();

@@ -17,8 +17,10 @@ import com.fiuty.domain.AbstractFinanceProduct;
  */
 public class SimpleFactoryPattern {
     public static void main(String[] args) {
-        AbstractFinanceProduct product = SimpleFactory.creatProduct(ProductEnum.Stock);
-        product.methodSame();
-        product.disPlayProduct();
+        AbstractFinanceProduct stockProduct = SimpleFactory.creatProduct(ProductEnum.Stock);
+        AbstractFinanceProduct bondProduct = SimpleFactory.creatProduct(ProductEnum.Bond);
+        stockProduct.methodSame();
+        stockProduct.disPlayProduct();
+        bondProduct.disPlayProduct();
     }
 }
