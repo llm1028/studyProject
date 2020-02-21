@@ -1,12 +1,12 @@
 package com.fiuty.parcel.service.impl;
 
-import com.fiuty.parcel.service.Calculate;
+import com.fiuty.parcel.service.CalculateStrategy;
 
 /**
  * 计算圆通邮费
  * @author Fiuty
  */
-public class CalculateYto implements Calculate {
+public class CalculateStrategyYto implements CalculateStrategy {
     @Override
     public Double calculate(Integer weight) {
         return 8 + weight * 1.5;

@@ -1,11 +1,11 @@
 package com.fiuty.parcel;
 
 import com.fiuty.parcel.constants.ParcelCompanyEnum;
-import com.fiuty.parcel.service.Calculate;
-import com.fiuty.parcel.service.impl.CalculateJd;
-import com.fiuty.parcel.service.impl.CalculateSto;
-import com.fiuty.parcel.service.impl.CalculateYto;
-import com.fiuty.parcel.service.impl.CalculateZto;
+import com.fiuty.parcel.service.CalculateStrategy;
+import com.fiuty.parcel.service.impl.CalculateStrategyJd;
+import com.fiuty.parcel.service.impl.CalculateStrategySto;
+import com.fiuty.parcel.service.impl.CalculateStrategyYto;
+import com.fiuty.parcel.service.impl.CalculateStrategyZto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,16 +16,16 @@ import java.util.Map;
  */
 public class CalculateFactory {
 
-    private Map<ParcelCompanyEnum, Calculate> map = new HashMap<>();
+    private Map<ParcelCompanyEnum, CalculateStrategy> map = new HashMap<>();
 
     {
-        map.put(ParcelCompanyEnum.JD, new CalculateJd());
-        map.put(ParcelCompanyEnum.YTO, new CalculateYto());
-        map.put(ParcelCompanyEnum.ZTO, new CalculateZto());
-        map.put(ParcelCompanyEnum.STO, new CalculateSto());
+        map.put(ParcelCompanyEnum.JD, new CalculateStrategyJd());
+        map.put(ParcelCompanyEnum.YTO, new CalculateStrategyYto());
+        map.put(ParcelCompanyEnum.ZTO, new CalculateStrategyZto());
+        map.put(ParcelCompanyEnum.STO, new CalculateStrategySto());
     }
 
-    public Calculate creat(ParcelCompanyEnum company) {
+    public CalculateStrategy creat(ParcelCompanyEnum company) {
         return map.get(company);
     }
 }
