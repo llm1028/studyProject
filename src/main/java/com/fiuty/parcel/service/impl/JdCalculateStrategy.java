@@ -3,12 +3,13 @@ package com.fiuty.parcel.service.impl;
 import com.fiuty.parcel.service.CalculateStrategy;
 
 /**
- * 计算圆通邮费
+ * 计算京东邮费
  * @author Fiuty
  */
-public class CalculateStrategyYto implements CalculateStrategy {
+public class JdCalculateStrategy implements CalculateStrategy {
+
     @Override
     public Double calculate(Integer weight) {
-        return 8 + weight * 1.5;
+        return 10 + weight * 1.2;
     }
 }

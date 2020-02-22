@@ -1,6 +1,8 @@
 package com.fiuty.parcel;
 
 import com.fiuty.parcel.constants.ParcelCompanyEnum;
+import com.fiuty.parcel.service.CalculateStrategy;
+import com.fiuty.parcel.service.impl.JdCalculateStrategy;
 
 /**
  * 客户端
@@ -21,5 +23,9 @@ public class Client {
 
         System.out.println("Java8 lambda + 策略模式 计算邮费：" + calculatePostage.map.get(company).apply(weight));
 
+        CalculateContext context = new CalculateContext();
+        CalculateStrategy calculateStrategy = new JdCalculateStrategy();
+        context.setCalculateStrategy(calculateStrategy);
+        System.out.println("运行时指定策略，计算邮费如下：" + context.calculate(weight));
     }
 }

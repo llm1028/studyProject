@@ -1,6 +1,7 @@
 package com.fiuty.parcel;
 
 import com.fiuty.parcel.constants.ParcelCompanyEnum;
+import com.fiuty.parcel.service.CalculateStrategy;
 
 import java.util.HashMap;
 import java.util.Map;
