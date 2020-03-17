@@ -23,6 +23,13 @@ public class TemplateMain {
         car2.setColor(ColorEnuum.WHITE.getColor());
         System.out.println(car2);
 
+        Car car3 = new Car();
+        MakeCarUtils.makeWheel(car3);
+        MakeCarUtils.makeMirror(car3);
+        MakeCarUtils.makeCarBody(car3);
+        car3.setColor(ColorEnuum.RED.getColor());
+        System.out.println(car3);
+
         Car wantWhiteCar = new Car();
         Car wantBlackCar = new Car();
         Car wantRedCar = new Car();
@@ -43,5 +50,12 @@ public class TemplateMain {
         System.out.println(whiteCar);
         System.out.println(blackCar);
 
+
+        Car white = new Car();
+        Car red = new Car();
+        LambdaCarTemplate.makeCar(white, LambdaCarTemplate.makeWhiteCar());
+        LambdaCarTemplate.makeCar(red, LambdaCarTemplate.makeRedCar());
+        System.out.println(white);
+        System.out.println(red);
     }
 }

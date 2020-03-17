@@ -1,6 +1,7 @@
 package com.fiuty.pattern.template;
 
 import com.fiuty.domain.Car;
+import com.fiuty.parcel.constants.ColorEnuum;
 
 import java.util.function.Consumer;
 
@@ -20,5 +21,17 @@ public class LambdaCarTemplate {
         car.setCarBody(true);
         System.out.println(car.hashCode()+"-车身制造完成-6");
         consumer.accept(car);
+    }
+
+    public static Consumer<Car> makeBlackCar() {
+        return (Car car) -> car.setColor(ColorEnuum.BLACK.getColor());
+    }
+
+    public static Consumer<Car> makeWhiteCar() {
+        return (Car car) -> car.setColor(ColorEnuum.WHITE.getColor());
+    }
+
+    public static Consumer<Car> makeRedCar() {
+        return (Car car) -> car.setColor(ColorEnuum.RED.getColor());
     }
 }
