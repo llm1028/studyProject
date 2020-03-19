@@ -57,5 +57,12 @@ public class TemplateMain {
         LambdaCarTemplate.makeCar(red, LambdaCarTemplate.makeRedCar());
         System.out.println(white);
         System.out.println(red);
+
+        Car makeWhite = new Car();
+        Car makeRed = new Car();
+        LambdaCarTemplate.makeCar(makeWhite, LambdaCarTemplate::makeWhiteCar);
+        LambdaCarTemplate.makeCar(makeRed, LambdaCarTemplate::makeRedCar);
+        System.out.println(makeWhite);
+        System.out.println(makeRed);
     }
 }

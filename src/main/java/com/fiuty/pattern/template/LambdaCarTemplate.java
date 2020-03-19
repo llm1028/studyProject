@@ -34,4 +34,16 @@ public class LambdaCarTemplate {
     public static Consumer<Car> makeRedCar() {
         return (Car car) -> car.setColor(ColorEnuum.RED.getColor());
     }
+
+    public static void makeWhiteCar(Car car) {
+        car.setColor(ColorEnuum.WHITE.getColor());
+    }
+
+    public static void makeRedCar(Car car) {
+        car.setColor(ColorEnuum.RED.getColor());
+    }
+
+    public static void makeBlackCar(Car car) {
+        car.setColor(ColorEnuum.BLACK.getColor());
+    }
 }
